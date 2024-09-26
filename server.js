@@ -1,26 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const fs = require('fs');
-const cors = require('cors');
-
-const port = process.env.PORT || 3000;
+const carroRoutes = require('./src/routes/carroRoutes');
 require('./src/config/database');
+
 dotenv.config();
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use('/Carro', carroRoutes);
 
-app.post('/cadastrarCarro', (req, res) => {
-    const novoCarro = req.body; 
-    let carros = { carro: [] };
-    if (fs.existsSync('carros.json')) {
-        carros = JSON.parse(fs.readFileSync('carros.json', 'utf8'));
-    }
-    carros.carro.push(novoCarro);
-    fs.writeFileSync('carros.json', JSON.stringify(carros, null, 2), 'utf8');
-    res.send('Carro cadastrado com sucesso!');
-});
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
