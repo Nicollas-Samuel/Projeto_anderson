@@ -4,20 +4,18 @@ function cadastrarCarro(){
     document.getElementById('carroForm').addEventListener('submit', async (e) => {
         e.preventDefault();
   
-        const marca = document.getElementById('marca-box').value;
-        const modelo = document.getElementById('modelo-box').value;
-        const ano = document.getElementById('ano-box').value;
-        const nome = document.getElementById('nome-box').value;
-        const tipo = document.getElementById('tipo-box').value;
-        const qtAcentos = document.getElementById('qtAcentos-box').value;
-        const preco = document.getElementById('preco-box').value;
+        const marca = req.body.marca;
+        const modelo = req.body.modelo;
+        const ano = req.body.ano;
+        const nome = req.body.modelo;
+        const tipo = req.body.tipo;
+        const qtAcentos = req.body.qtAcentos;
+        const preco = req.body.preco;
   
-        const response = await fetch('/carros', {
+        const response = await fetch('/Carro', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ marca, modelo, ano, nome, tipo, qtAcentos,preco }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ marca, modelo, ano, nome, tipo, qtAcentos, preco }),
         });
   
         const result = await response.json();
