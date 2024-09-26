@@ -11,7 +11,7 @@ exports.createCarro = async (req, res) => {
 
 exports.getALLCarros = async (req, res) => {
     try{
-        const carro = await Carro.find().populate('carro');
+        const carro = await Carro.find().populate('Carro');
         res.status(200).json(carro);
     } catch (error) {
         res.status(400).json({ message: error.message });

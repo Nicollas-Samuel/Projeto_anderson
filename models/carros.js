@@ -7,7 +7,8 @@ const CarroSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   tipo: { type: String, required: true }, 
   qtAcentos: { type: Number, required: true },
-  preco: { type: Number, required: true }
+  preco: { type: Number, required: true },
+  Carro: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Carro' }]
 });
 
 const Carro = mongoose.model('Carro', CarroSchema);
