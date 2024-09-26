@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCustom</title>
+    <link rel="icon" href="../AutoCustom_logo.png" type="image/png">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="container">
+                <div class="logo"><img src="../AutoCustom_logo.png"></div>
+                <div class="menu">
+                    <nav>
+                        <a href="../src/index.html"> Página inicial </a>
+                        <a href="../src/cadastrarCarros.html"> Cadastrar Carros </a>
+                        <a href="../src/removerCarros.html"> Remover Carros </a>
+                        <a href="../src/alterarCarros.html"> Alterar Carros </a>
+                        <a href="../src/listarCarros.html"> Listar Carros </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ab">
+        <section class="form-container">
+            <div class="containe">
+                <form method="post" class="carro">
+                    <br/>
+                    <div class="input-single">
+                        <p> Digite o id do carro que voçê deseja alterar o ano: </p>
+                        <input type="number" name="id" id="id2-box" class="input" autocomplete="off" required/>
+                        <label for="id2-box">ID do Carro</label>
+                    </div>
+                    <div class="input-single">
+                        <input type="text" name="modelo" id="modelo-box" class="input" autocomplete="off" required/>
+                        <label for="modelo-box">Novo modelo</label>
+                    </div>
+                    <div class="btn"> <input onclick="alterarCarro()" type="submit" value="alterar"> </div>
+                    <button class="btn" onclick="history.go(-1)">cancelar</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>

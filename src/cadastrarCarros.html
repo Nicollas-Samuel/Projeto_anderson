@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCustom</title>
+    <link rel="icon" href="../AutoCustom_logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="container">
+                <div class="logo"><img src="../AutoCustom_logo.png"></div>
+                <div class="menu">
+                    <nav>
+                        <a href="./index.html"> Página inicial </a>
+                        <a href="./cadastrarCarros.html"> Cadastrar Carros </a>
+                        <a href="./removerCarros.html"> Remover Carros </a>
+                        <a href="./alterarCarros.html"> Alterar Carros </a>
+                        <a href="./listarCarros.html"> Listar Carros </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ab">
+        <section class="form-container">
+            <div class="containe">
+                <form id="carroForm">
+                    <br/>
+    
+                    <div class="input-single">
+                        <input type="text" name="nome-box" id="nome-box" class="input" autocomplete="off" required/>
+                        <label for="nome-box">Nome</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="text" name="marca-box" id="marca-box" class="input" autocomplete="off" required/>
+                        <label for="marca-box">Marca</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="text" name="tipo-box" id="tipo-box" class="input" autocomplete="off" required/>
+                        <label for="tipo-box">Tipo</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="text" name="modelo-box" id="modelo-box" class="input" autocomplete="off" required/>
+                        <label for="modelo-box">Modelo</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="number" name="qtAcentos-box" id="qtAcentos-box" class="input" autocomplete="off" required/>
+                        <label for="qtAcentos-box">Quantidade de acentos</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="number" name="ano" id="ano-box" class="input" autocomplete="off" required/>
+                        <label for="ano-box">Ano</label>
+                    </div>
+    
+                    <div class="input-single">
+                        <input type="number" name="preco" id="preco-box" class="input" autocomplete="off" required/>
+                        <label for="preco-box">Preço</label>
+                    </div>
+                    <div class="btn"> <button type="submit">Cadastrar</button> </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="../index.js"></script>
+</body>
+</html>
