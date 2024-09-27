@@ -2,8 +2,8 @@ const Carro = require('../models/carros');
 
 exports.createCarro = async (req, res) => {
     try{
-        const carro = await Carro.create(req.body);
-        res.status(201).json(carro);
+        const carro = await Carro.insertMany(req.body);
+        res.status(201).json(carros);
     } catch (error){
         res.status(400).json({menssage: error.menssage});
     }
@@ -12,7 +12,7 @@ exports.createCarro = async (req, res) => {
 exports.getALLCarros = async (req, res) => {
     try{
         const carro = await Carro.find().populate('Carro');
-        res.status(200).json(carro);
+        res.status(200).json(carros);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -30,7 +30,7 @@ exports.updateCarro = async (req,res) =>{
 exports.deleteCarro = async (req,res) =>{
     try{
         await Carro.findByIdAndUpdate(req.params.id);
-        res.status(200).json({menssage: "Carro Deletada"});
+        res.status(200).json({menssage: "Carro Deletado"});
     }catch{
         res.status(400).json({menssage: error.menssage}) ;
     } 

@@ -8,9 +8,8 @@ const CarroSchema = new mongoose.Schema({
   tipo: { type: String, required: true }, 
   qtAcentos: { type: Number, required: true },
   preco: { type: Number, required: true },
-  Carro: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Carro' }]
 });
 
-const Carro = mongoose.model('Carro', CarroSchema);
+const Carro = mongoose.model('carros', CarroSchema);
 
 module.exports = Carro;

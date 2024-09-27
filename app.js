@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const carroRoutes = require('./routes/carroRoutes.js');
-require('./config/database');
+const carroRoutes = require('./src/routes/carroRoutes.js');
+require('./src/config/database');
 
 dotenv.config();
 const app = express();
