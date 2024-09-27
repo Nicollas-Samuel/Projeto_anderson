@@ -11,7 +11,7 @@ exports.createCarro = async (req, res) => {
 
 exports.getALLCarros = async (req, res) => {
     try{
-        const carros = await Carro.find().populate('Carro');
+        const carros = await Carro.find();
         res.status(200).json(carros);
     } catch (error) {
         res.status(400).json({ message: error.message });
@@ -20,16 +20,19 @@ exports.getALLCarros = async (req, res) => {
 
 exports.updateCarro = async (req,res) =>{
     try{
-        const Carro = await Carro.findByIdAndUpdate(req.params.id, req.body, {new: true});
-        res.status(200).json({menssage: "carro adcionado", Carro});
+        const carroAtualizado = await Carro.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        if (!carroAtualizado) {
+            return res.status(404).json({ message: 'Carro não encontrado' });
+        }
+        res.status(200).json({ menssage: "carro adcionado", carroAtualizado });
     }catch{
-        res.status(400).json({menssage: error.menssage});
+        res.status(400).json({ menssage: error.menssage });
     } 
 };
 
 exports.deleteCarro = async (req,res) =>{
     try{
-        await Carro.findByIdAndUpdate(req.params.id);
+        await Carro.findByIdAndDelete(req.params.id);
         res.status(200).json({menssage: "Carro Deletado", Carro});
     }catch{
         res.status(400).json({menssage: error.menssage}) ;
