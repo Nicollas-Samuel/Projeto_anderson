@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function cadastrarCarro(){
-    document.getElementById('carroForm').addEventListener('submit', async (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
   
         const marca = req.body.marca;
