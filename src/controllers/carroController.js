@@ -5,7 +5,7 @@ exports.createCarro = async (req, res) => {
         const carro = await Carro.insertMany(req.body);
         res.status(201).json(carro);
     } catch (error){
-        res.status(400).json({message: error.menssage});
+        res.status(400).json({message: error.mensage});
     }
 };
 
@@ -26,7 +26,7 @@ exports.updateCarro = async (req,res) =>{
         }
         res.status(200).json({ message: "carro adcionado", carroAtualizado });
     }catch{
-        res.status(400).json({ message: error.menssage });
+        res.status(400).json({ message: error.message });
     } 
 };
 
@@ -35,6 +35,6 @@ exports.deleteCarro = async (req,res) =>{
         await Carro.findByIdAndDelete(req.params.id);
         res.status(200).json({message: "Carro Deletado", Carro});
     }catch{
-        res.status(400).json({message: error.menssage}) ;
+        res.status(400).json({message: error.message}) ;
     } 
 };

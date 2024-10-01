@@ -16,7 +16,7 @@ function cadastrarCarro(){
             }
         ]
 
-        const response = await fetch('/many/Carros', {
+        const response = await fetch('/many/Carro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,10 +32,6 @@ function cadastrarCarro(){
         }
     });
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-    cadastrarCarro();
-});
 
 async function removerCarro(){
     const id = parseInt(document.getElementById("remove-box").value);
@@ -122,5 +118,6 @@ function listarCarro(){
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    cadastrarCarro();
     listarCarro();
 });
